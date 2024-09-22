@@ -6,7 +6,7 @@ In this repository you will find all the metadata changes made to accomplish the
 
 For testing, install the follow package in your Salesforce Org:
 
-https://login.salesforce.com/packaging/installPackage.apexp?p0=04tak0000003Ogv
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04tak0000003PGP
 
 ### Permissions
 
