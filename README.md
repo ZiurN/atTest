@@ -14,6 +14,10 @@ To grant access to the necessary adjustments in the Take Home Project, assign th
 
 ### Implementation
 
-In order to have access to the *Delete all product* button in the Opportunity view, it's necessary to assign the flexipage *	Opportunity Record Page* (`Opportunity_Record_Page`) as the default view to the profiles/apps configuration you need.
+In order to have access to the *Delete all product* button in the Opportunity view, it's necessary to assign the flexipage *Opportunity Record Page* (`Opportunity_Record_Page`) as the default view to the profiles/apps configuration you need.
 
 ![image](https://github.com/user-attachments/assets/1124d08f-17ea-4650-adcf-1ffc33380a3f)
+
+Also, is needed to set the *Page Layout* **Opportunity Product Layout 2** as the default Page layout to the Profiles you need.
+
+![image](https://github.com/user-attachments/assets/430f86f8-18f7-4593-82bb-218e7b4e4718)
