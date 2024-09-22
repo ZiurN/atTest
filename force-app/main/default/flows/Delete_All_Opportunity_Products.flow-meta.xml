@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <constants>
+        <name>TXT_Confirmation_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Are you sure you want to delete all products of this opportunity?</stringValue>
+        </value>
+    </constants>
+    <environments>Default</environments>
+    <interviewLabel>Return Item {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Delete All Opportunity Products</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordDeletes>
+        <name>Delete_Opportunity_Products</name>
+        <label>Delete Opportunity Products</label>
+        <locationX>176</locationX>
+        <locationY>350</locationY>
+        <inputReference>Get_Opportunity_Line_Items</inputReference>
+    </recordDeletes>
+    <recordLookups>
+        <name>Get_Opportunity_Line_Items</name>
+        <label>Get Opportunity Line Items</label>
+        <locationX>176</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>SC_Confirmation_Message</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>OpportunityId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>OpportunityLineItem</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <screens>
+        <name>SC_Confirmation_Message</name>
+        <label>Confirmation Message</label>
+        <locationX>176</locationX>
+        <locationY>242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <backButtonLabel>No</backButtonLabel>
+        <connector>
+            <targetReference>Delete_Opportunity_Products</targetReference>
+        </connector>
+        <fields>
+            <name>SC_Confirmation_Message_TXT</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;{!TXT_Confirmation_Message}&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <nextOrFinishButtonLabel>Yes</nextOrFinishButtonLabel>
+        <pauseButtonLabel>No</pauseButtonLabel>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <sourceTemplate>runtime_commerce_oms__Return_Item</sourceTemplate>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Opportunity_Line_Items</targetReference>
+        </connector>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>recordId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
