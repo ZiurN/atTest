@@ -1,18 +1,19 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Developer Take Home Project
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+In this repository you will find all the metadata changes made to accomplish the **Salesforce Developer Take Home Project**.
 
-## How Do You Plan to Deploy Your Changes?
+## Installation and configuration
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+For testing, install the follow package in your Salesforce Org:
 
-## Configure Your Salesforce DX Project
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04tak0000003Ogv
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+### Permissions
 
-## Read All About It
+To grant access to the necessary adjustments in the Take Home Project, assign the *Permission Set* named **ATPS** to the users you want to provide access to.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+### Implementation
+
+In order to have access to the *Delete all product* button in the Opportunity view, it's necessary to assign the flexipage *	Opportunity Record Page* (`Opportunity_Record_Page`) as the default view to the profiles/apps configuration you need.
+
+![image](https://github.com/user-attachments/assets/1124d08f-17ea-4650-adcf-1ffc33380a3f)
